@@ -102,7 +102,9 @@ def app():
             time.sleep(1.5)
         elif choice == '2':
             # View All Books
-            pass
+            for book in session.query(Book):
+                print(f'{book.id} | {book.title} | {book.author} | ${round(book.price)/100:.2f}')
+            input('\nPress enter to return to the main menu.')
         elif choice == '3':
             # Search for Book
             pass
